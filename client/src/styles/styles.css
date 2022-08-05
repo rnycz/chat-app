@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+.App {
+  height: 100vh;
+  background: #fff;
+  color: #212121;
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+body {
+  margin: 0;
+}
+
+.join-chat-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.join-chat-container h3 {
+  font-size: 40px;
+  margin: 15px 0;
+}
+.join-chat-container input {
+  outline: none;
+  width: 210px;
+  margin: 7px;
+  border: 2px solid #43a047;
+  border-radius: 5px;
+  padding: 15px 10px;
+  font-size: 16px;
+  transition: 0.3s border;
+}
+.join-chat-container input:focus {
+  border: 2px solid #1f5822;
+}
+.join-chat-container button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 7px auto;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 16px;
+  background-color: #43a047;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s background-color;
+}
+.join-chat-container button:hover {
+  background-color: #1f5822;
+}
+
+.app-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  width: 100%;
+}
+.app-container .sidebar {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 20px;
+  margin: 10px 5px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 20px -5px #263238;
+}
+.app-container .sidebar h2 {
+  margin: 10px 0;
+  text-align: center;
+}
+.app-container .sidebar .active-users-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.app-container .sidebar .active-users-list .active-user {
+  padding: 10px;
+  box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);
+  border-radius: 10px;
+  margin: 3px;
+  display: grid;
+  grid-auto-flow: row;
+  transition: 0.3s transform;
+}
+.app-container .sidebar .active-users-list .active-user p {
+  margin: 0;
+}
+.app-container .sidebar .active-users-list .active-user p:nth-child(1) {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  grid-template-columns: 26px;
+}
+.app-container .sidebar .active-users-list .active-user p:nth-child(2) {
+  font-size: 12px;
+  color: gray;
+}
+.app-container .sidebar .active-users-list .active-user .icon {
+  color: gray;
+  font-size: 20px;
+}
+.app-container .sidebar .active-users-list .active-user:hover {
+  transform: scale(1.1);
+}
+.app-container .sidebar hr {
+  border: 0;
+  height: 0;
+  border-bottom: 1px solid #263238;
+}
+.app-container .sidebar .info-container {
+  font-size: 20px;
+  margin: 10px 0 20px 0;
+  display: grid;
+  grid-auto-flow: row;
+  gap: 10px;
+}
+.app-container .sidebar .info-container .icons {
+  color: gray;
+  font-size: 30px;
+  justify-self: end;
+}
+.app-container .sidebar .info-container .username, .app-container .sidebar .info-container .room {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+.app-container .sidebar .info-container .username {
+  font-weight: bold;
+}
+.app-container .sidebar .info-container .room {
+  text-align: center;
+  font-size: 18px;
+  color: gray;
+}
+.app-container .main {
+  margin: 10px 5px;
+}
+.app-container .main .chat-container {
+  width: 300px;
+}
+.app-container .main .chat-container .chat-window {
+  width: 300px;
+  height: 420px;
+}
+.app-container .main .chat-container .chat-window p {
+  margin: 0;
+}
+.app-container .main .chat-container .chat-window .chat-header {
+  border-radius: 5px 5px 0 0;
+  background-color: #263238;
+}
+.app-container .main .chat-container .chat-window .chat-header p {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 20px;
+  gap: 3px;
+  padding: 12px 15px;
+  color: #fff;
+  font-weight: bold;
+}
+.app-container .main .chat-container .chat-window .chat-header .icon {
+  color: green;
+  font-size: 20px;
+  justify-self: end;
+}
+.app-container .main .chat-container .chat-window .chat-body {
+  height: 335px;
+  border: 1px solid #263238;
+  background-color: white;
+}
+.app-container .main .chat-container .chat-window .chat-body .message-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.app-container .main .chat-container .chat-window .chat-body .message-container::-webkit-scrollbar {
+  display: none;
+}
+.app-container .main .chat-container .chat-window .chat-body .message {
+  height: auto;
+  padding: 10px;
+  display: flex;
+}
+.app-container .main .chat-container .chat-window .chat-body .message .message-content {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 160px;
+  background-color: #43a047;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.app-container .main .chat-container .chat-window .chat-body .message .message-meta {
+  display: flex;
+  font-size: 12px;
+}
+.app-container .main .chat-container .chat-window .chat-body .message .message-meta #author {
+  margin-left: 10px;
+  font-weight: bold;
+}
+.app-container .main .chat-container .chat-window .chat-footer {
+  border: 1px solid #263238;
+  border-top: none;
+  display: flex;
+}
+.app-container .main .chat-container .chat-window .chat-footer input {
+  flex: 85%;
+  border: 0;
+  padding: 10px;
+  font-size: 16px;
+  border-right: 1px dotted black;
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+}
+.app-container .main .chat-container .chat-window .chat-footer button {
+  border: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex: 15%;
+  background-color: transparent;
+  outline: none;
+  font-size: 25px;
+  color: lightgray;
+  transition: 0.3s color;
+}
+.app-container .main .chat-container .chat-window .chat-footer button:hover {
+  color: #1f5822;
+}
+
+#you {
+  justify-content: flex-start;
+}
+#you .message-content {
+  justify-content: flex-start;
+}
+#you .message-meta {
+  justify-content: flex-start;
+}
+
+#other {
+  justify-content: flex-end;
+}
+#other .message-content {
+  justify-content: flex-end;
+  margin-left: auto;
+  background-color: cornflowerblue;
+}
+#other .message-meta {
+  justify-content: flex-end;
+}/*# sourceMappingURL=styles.css.map */
